@@ -17,6 +17,9 @@ delete-lab: dynamic-inventory
 packet-list-inventory: dynamic-inventory
 	@ PACKET_API_TOKEN=$$API_TOKEN ./packet_net.py --list | jq .
 
+push-image:
+	docker push hassy/packet-performance-labs
+
 #
 # Dynamic inventory scripts:
 #
