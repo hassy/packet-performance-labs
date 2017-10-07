@@ -39,7 +39,7 @@ API_TOKEN="your Packet API token" PROJECT_ID="your Packet project ID" make creat
 
 Once finished, `ssh` in (the username is `root`) and you're good to go.
 
-**NOTE** This command should be run from the Docker container.
+**NOTE:** This command should be run from the Docker container.
 
 #### Delete the machine
 
@@ -49,7 +49,7 @@ When you're done with the machine, run:
 API_TOKEN="your Packet API token" PROJECT_ID="your Packet project ID" make delete-lab
 ```
 
-**NOTE** This command should be run from the Docker container.
+**NOTE:** This command should be run from the Docker container.
 
 
 ## License
