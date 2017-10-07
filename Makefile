@@ -6,7 +6,7 @@ build-ansible-image: dynamic-inventory
 	docker build -t hassy/packet-performance-labs .
 
 docker-shell:
-	docker run -it --rm hassy/perf-lab /bin/bash
+	docker run -it --rm hassy/packet-performance-labs /bin/bash
 
 create-lab: dynamic-inventory
 	@ PACKET_PROJECT_ID=$$PROJECT_ID PACKET_API_TOKEN=$$API_TOKEN bash run_ansible.sh create
