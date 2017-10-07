@@ -1,0 +1,7 @@
+- name: Delete Packet.net device
+  hosts: localhost
+  tasks:
+    - packet_device:
+        project_id: "{{ packet_project_id }}"
+        hostnames: performance-lab
+        state: absent

@@ -1,0 +1,36 @@
+- name: Create an Ubuntu machine
+  hosts: localhost
+  tasks:
+    - packet_sshkey:
+        key_file: ~/.ssh/id_rsa.pub
+        label: Personal key
+
+    - packet_device:
+        project_id: "{{ packet_project_id }}"
+        hostnames: performance-lab
+        operating_system: ubuntu_17_04
+        plan: baremetal_0
+        facility: ams1
+        wait_for_public_IPv: 4
+        state: active
+        user_data: |
+          #cloud-config
+          packages_update: true
+          packages:
+            - emacs25-nox
+            - git
+            - linux-tools-common
+            - linux-tools-generic
+          runcmd:
+            - git clone https://github.com/purcell/emacs.d.git /root/.emacs.d
+            - apt-get install linux-tools-`uname -r`
+      register: newhosts
+
+    - name: wait for ssh
+      wait_for:
+        delay: 1
+        host: "{{ item.public_ipv4 }}"
+        port: 22
+        state: started
+        timeout: 500
+      with_items: "{{ newhosts.devices }}"
