@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - packet_sshkey:
-        key_file: ~/.ssh/id_rsa.pub
+        key_file: "{{ keyfile | default('key.pub') }}"
         label: Personal key
 
     - packet_device:
