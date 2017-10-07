@@ -10,9 +10,10 @@ This repo contains the scripts for setting up on-demand baremetal performance an
 - On-demand: Less than 15 minutes to set up. Pay from just [$0.05/hour](https://www.packet.net/bare-metal/servers/type-0/).
 - Baremetal: Blazing fast dedicated machines with no virtualization overhead or noisy neighbors.
 - Performance analysis & benchmarking: A recent Linux kernel with `perf`. A Node.js environment with nvm and stackvis.
+- Other useful tools: Emacs + [purcell/emacs.d](https://github.com/purcell/emacs.d)
 - Powered by [Packet.net](https://packet.net)
 
-This is something I wrote for myself for working on [Artillery.io](https://artillery.io). I hope you find it useful too.
+This is something I quickly put together for myself for working on [Artillery.io](https://artillery.io). I hope you find it useful too.
 
 ## Usage
 
