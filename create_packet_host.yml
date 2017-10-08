@@ -9,8 +9,8 @@
         project_id: "{{ packet_project_id }}"
         hostnames: performance-lab
         operating_system: ubuntu_17_04
-        plan: baremetal_0
-        facility: ams1
+        plan: "{{ packet_plan | default('baremetal_0') }}"
+        facility: "{{ packet_facility | default('ams1') }}"
         wait_for_public_IPv: 4
         state: active
         user_data: |

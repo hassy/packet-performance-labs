@@ -49,6 +49,16 @@ API_TOKEN="your Packet API token" PROJECT_ID="your Packet project ID" make creat
 
 Once finished, `ssh` in (the username is `root`) and you're good to go.
 
+By default a [Type0](https://www.packet.net/bare-metal/servers/type-0/) server will be provisioned in Amsterdam. You can specify the facility and server type with `PACKET_FACILITY` and `PACKET_PLAN`:
+
+- `PACKET_FACILITY=lax1 API_TOKEN="token" PROJECT_ID="id" make create-lab` - create a server in Los Angeles.
+- `PACKET_PLAN=baremetal_1 PACKET_FACILITY=syd1 API_TOKEN="token" PROJECT_ID="id" make create-lab` - create a Type1 server in Sydney.
+
+Full list of facility & plan codes is available through the Packet API:
+
+- [facilities](https://www.packet.net/developers/api/facilities/)
+- [plans](https://www.packet.net/developers/api/plans/)
+
 (**NOTE:** This command should be run from the Docker container.)
 
 #### Delete the machine

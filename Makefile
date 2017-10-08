@@ -2,6 +2,9 @@
 
 SHELL := /bin/bash
 
+PACKET_FACILITY ?= "ams1"
+PACKET_PLAN ?= "baremetal_0"
+
 build-ansible-image: dynamic-inventory
 	docker build -t hassy/packet-performance-labs .
 
@@ -9,7 +12,7 @@ docker-shell:
 	docker run -it --rm hassy/packet-performance-labs /bin/bash
 
 create-lab: dynamic-inventory
-	@ PACKET_PROJECT_ID=$$PROJECT_ID PACKET_API_TOKEN=$$API_TOKEN bash run_ansible.sh create
+	@ PACKET_PROJECT_ID=$$PROJECT_ID PACKET_API_TOKEN=$$API_TOKEN bash run_ansible.sh create $(PACKET_FACILITY) $(PACKET_PLAN)
 
 delete-lab: dynamic-inventory
 	@ PACKET_PROJECT_ID=$$PROJECT_ID PACKET_API_TOKEN=$$API_TOKEN bash run_ansible.sh delete
