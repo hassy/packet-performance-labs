@@ -51,8 +51,8 @@ Once finished, `ssh` in (the username is `root`) and you're good to go.
 
 By default a [Type0](https://www.packet.net/bare-metal/servers/type-0/) server will be provisioned in Amsterdam. You can specify the facility and server type with `PACKET_FACILITY` and `PACKET_PLAN`:
 
-- `PACKET_FACILITY=lax1 API_TOKEN="token" PROJECT_ID="id" make create-lab` - create a server in Los Angeles.
-- `PACKET_PLAN=baremetal_1 PACKET_FACILITY=syd1 API_TOKEN="token" PROJECT_ID="id" make create-lab` - create a Type1 server in Sydney.
+- `PACKET_FACILITY=sjc1 API_TOKEN="token" PROJECT_ID="id" make create-lab` - create a server in San Jose.
+- `PACKET_PLAN=baremetal_1e PACKET_FACILITY=ord1 API_TOKEN="token" PROJECT_ID="id" make create-lab` - create a Type1 server in Chicago.
 
 Full list of facility & plan codes is available through the Packet API:
 
